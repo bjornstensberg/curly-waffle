@@ -30,9 +30,10 @@ builder.Services
     .PublishEventsToWolverine("Everything", relay =>
     {
         relay.PublishEvent<WeatherForecast>(
+            // workaround? 
             // async (@event, bus) =>
             // {
-            //     // bus.TenantId // this is going to be "Marten"
+            //     bus.TenantId = @event.TenantId;
             //     await bus.PublishAsync(@event);
             // }
             );
