@@ -1,6 +1,11 @@
 @WebApp_HostAddress = https://localhost:7167
 
-GET {{WebApp_HostAddress}}/produce
+GET {{WebApp_HostAddress}}/works
+Accept: application/json
+
+###
+
+GET {{WebApp_HostAddress}}/fails
 Accept: application/json
 
 ###

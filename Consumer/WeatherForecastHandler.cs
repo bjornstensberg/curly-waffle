@@ -13,7 +13,7 @@ public class WeatherForecastHandler
         Envelope envelope,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("Envelop: {0}. Session: {1}", envelope.TenantId, session.TenantId);
+        logger.LogInformation("Envelope Tenant Id: {0}.\r\nSession Tenant Id: {1}.", envelope.TenantId, session.TenantId);
     }
     
 }

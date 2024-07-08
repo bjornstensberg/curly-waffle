@@ -29,7 +29,13 @@ builder.Services
     .IntegrateWithWolverine(transportSchemaName: "public", autoCreate: AutoCreate.CreateOrUpdate)
     .PublishEventsToWolverine("Everything", relay =>
     {
-        relay.PublishEvent<WeatherForecast>();
+        relay.PublishEvent<WeatherForecast>(
+            // async (@event, bus) =>
+            // {
+            //     // bus.TenantId // this is going to be "Marten"
+            //     await bus.PublishAsync(@event);
+            // }
+            );
     })
     .AddAsyncDaemon(DaemonMode.Solo)
     .UseNpgsqlDataSource()
